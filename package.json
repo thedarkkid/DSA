@@ -1,0 +1,28 @@
+{
+  "name": "dsalgo",
+  "version": "0.0.1",
+  "description": "a list of data structures and their corresponding algorithms",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "jest tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thedarkkid/DSA.git"
+  },
+  "keywords": [
+    "DSA"
+  ],
+  "author": "thedarkkid.codes@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thedarkkid/DSA/issues"
+  },
+  "homepage": "https://github.com/thedarkkid/DSA#readme",
+  "dependencies": {
+    "jest": "^27.5.1"
+  }
+}
