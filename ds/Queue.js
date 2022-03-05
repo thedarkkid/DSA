@@ -1,4 +1,4 @@
-const { Node, LinkedList } = require('./LinkedList');
+const { LinkedListNode, LinkedList } = require('./LinkedList');
 
 class Queue {
   head;
@@ -7,11 +7,11 @@ class Queue {
   add (item) {
     if (!item) return;
     if (!this.head || !this.tail) {
-      this.tail = new Node(item);
+      this.tail = new LinkedListNode(item);
       this.head = this.tail;
       return;
     }
-    this.tail.next = new Node(item);
+    this.tail.next = new LinkedListNode(item);
     this.tail = this.tail.next;
   }
 
