@@ -15,6 +15,10 @@ class Queue {
     this.tail = this.tail.next;
   }
 
+  addMany (items) {
+    for (const item of items) this.add(item);
+  }
+
   remove () {
     if (!this.tail || !this.head) return null;
     const headValue = this.head.value;
@@ -35,6 +39,5 @@ class Queue {
     return LinkedList.toArray(this.head).reverse();
   }
 }
-
 
 module.exports = { Queue };
