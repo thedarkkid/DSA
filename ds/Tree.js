@@ -10,7 +10,7 @@ class BinaryTreeNode {
 
 class TreeNode {
   value;
-  children;
+  children = [];
 
   constructor (value) {
     this.value = value;
@@ -42,14 +42,14 @@ class Trie {
    * @param word
    */
   add (word) {
-    let curr = this.root;
+    let currentNode = this.root;
     while (word.length > 0) {
-      if (!curr.keys.has(word[0])) curr.keys.set(word[0], new TrieNode());
-      if (word.length === 1) curr.keys.get(word[0]).setEnd();
+      if (!currentNode.keys.has(word[0])) currentNode.keys.set(word[0], new TrieNode());
+      if (word.length === 1) currentNode.keys.get(word[0]).setEnd();
 
-      const next = curr.keys.get(word[0]);
+      const next = currentNode.keys.get(word[0]);
       word = word.substring(1);
-      curr = next;
+      currentNode = next;
     }
   }
 
@@ -84,11 +84,11 @@ class Trie {
    * @param wordsArray
    */
   search (currentPrefix, node, wordsArray) {
-    for (const [currentLetter, currentNode] of node.keys) {
+    for (const [currentChar, currentNode] of node.keys) {
       if (currentNode.isEnd()) {
-        wordsArray.push(currentPrefix + currentLetter);
+        wordsArray.push(currentPrefix + currentChar);
       }
-      this.search(currentPrefix + currentLetter, currentNode, wordsArray);
+      this.search(currentPrefix + currentChar, currentNode, wordsArray);
     }
   };
 
